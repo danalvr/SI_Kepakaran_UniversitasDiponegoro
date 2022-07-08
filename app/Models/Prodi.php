@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Prodi extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
+
+    public function user()
+    {
+        return $this->hasMany(User::class);
+    }
+
+    public function fakultas()
+    {
+        return $this->belongsTo(Fakultas::class);
+    }
 }

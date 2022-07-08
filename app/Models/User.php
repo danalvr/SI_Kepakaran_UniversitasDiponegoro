@@ -25,6 +25,16 @@ class User extends Authenticatable
 
     protected $guarded = ['id'];
 
+    public function level()
+    {
+        return $this->belongsTo(Level::class);
+    }
+
+    public function prodi()
+    {
+        return $this->belongsTo(Prodi::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
